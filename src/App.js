@@ -1,19 +1,47 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Home from "./pages/home";
+import PestControl from "./pages/pestControl";
+import React from 'react';
+import style from "styled-components";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
-class App extends Component {
+const Styled = style.div`
+  nav {
+    padding: 15px;
+
+    a {
+      padding-left: 10px;
+    }
+
+    .navLink {
+      color: red;
+    }
+  }
+  .footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+  }
+`;
+
+const Links = () =>
+  <nav>
+    <Link to="/" className="navLink">Home</Link>
+    <Link to="/pest-control">Pest Control</Link>
+  </nav>
+
+class App extends React.Component {
   render() {
+    // Theme Provider will live here in V2
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <BrowserRouter>
+        <Styled>
+          <Links />
+          <Route exact path="/" component={Home}/>
+          <Route path="/pest-control" component={PestControl}/>
+          <div className="footer">Footer</div>
+        </Styled>
+      </BrowserRouter>
     );
   }
 }
