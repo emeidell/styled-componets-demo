@@ -6,28 +6,61 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 
 const Styled = style.div`
   nav {
-    padding: 15px;
+    padding: 10px 20px;
+    background-color: #34495e;
+    display: flex;
+    align-items: center;
 
-    a {
-      padding-left: 10px;
+    .logo {
+      user-select: none;
+      color: white;
+      margin-bottom: 8px;
+      margin-right: 20px;
+      margin-left: 20px;
+      text-decoration: none;
+
+    }
+    .logo :last-child {
+      display: flex;
+      justify-content: flex-end;
+      line-height: 8px;
+      font-size: 28px;
     }
 
-    .navLink {
-      color: red;
+    .nav-link {
+      padding: 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
     }
+
   }
+
   .footer {
     bottom: 0;
     left: 0;
     right: 0;
     position: fixed;
+    text-align: center;
+    background-color: lightgrey;
+    color: white;
+    font-style: italic;
+    height: 45px;
+
+    .footer-title {
+      margin-top: 14px;
+    }
   }
 `;
 
 const Links = () =>
   <nav>
-    <Link to="/" className="navLink">Home</Link>
-    <Link to="/pest-control">Pest Control</Link>
+    <a href="http://www.evanmeidell.com/" className="logo">
+      <div>EvanMeidell</div>
+      <div>.com</div>
+    </a>
+    <Link to="/" className="nav-link">Home</Link>
+    <Link to="/pest-control" className="nav-link">Pest Control</Link>
   </nav>
 
 class App extends React.Component {
@@ -39,7 +72,9 @@ class App extends React.Component {
           <Links />
           <Route exact path="/" component={Home}/>
           <Route path="/pest-control" component={PestControl}/>
-          <div className="footer">Footer</div>
+          <div className="footer">
+            <div className="footer-title">Built by Evan Meidell</div>
+          </div>
         </Styled>
       </BrowserRouter>
     );
