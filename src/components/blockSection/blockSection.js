@@ -21,15 +21,16 @@ const Styled = style.div`
       font-size: 25px;
     }
 
+    .block-section-img {
+      text-align: center;
+      margin-top: 20px;
+      max-height: 300px;
+      height: 300px;
+    }
+    
     .block-section-content {
       padding: 20px;
 
-      .block-section-img {
-        text-align: center;
-        margin-top: 20px;
-        max-height: 300px;
-        height: 300px;
-      }
     }
   }
 `
@@ -49,8 +50,8 @@ class BlockSection extends React.Component {
       <Styled>
         <div className="block-section">
           <div className="block-section-title">{this.props.sectionTitle}</div>
+          {this.renderImg()}
           <div className="block-section-content">
-            {this.renderImg()}
             {this.props.children}
           </div>
         </div>
