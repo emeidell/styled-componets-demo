@@ -1,5 +1,6 @@
 import Home from "./pages/home";
 import PestControl from "./pages/pestControl";
+import ReactRouterExample from "./pages/reactRouter";
 import React from 'react';
 import style from "styled-components";
 import { BrowserRouter, Route, Link } from "react-router-dom";
@@ -61,6 +62,7 @@ const Links = () =>
     </a>
     <Link to="/" className="nav-link">Home</Link>
     <Link to="/pest-control" className="nav-link">Pest Control</Link>
+    <Link to="/react-router" className="nav-link">React-Router</Link>
   </nav>
 
 class App extends React.Component {
@@ -72,6 +74,7 @@ class App extends React.Component {
           <Links />
           <Route exact path="/" component={Home}/>
           <Route path="/pest-control" component={PestControl}/>
+          <Route path="/react-router" component={ReactRouterExample}/>
           <div className="footer">
             <div className="footer-title">Built by Evan Meidell</div>
           </div>

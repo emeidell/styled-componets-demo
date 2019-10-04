@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: evanmeidell.com
+Token: 470c4559209ea7944ff6d1f074d0b97126796fdc0637109d65fe129f78ebf0ce
